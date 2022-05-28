@@ -42,10 +42,8 @@ li a{
 .search:hover{
   border: none !important;
 }
-.img-div{
-  border-bottom: solid 1px #474350;
 
-}
+
 
 
 @media screen and (min-width:767px) {
@@ -53,10 +51,7 @@ li a{
   .form-inline{
     width: 40vw;
   }
-  .img-div{
-    border-bottom: none;
   
-  }
  
 
   

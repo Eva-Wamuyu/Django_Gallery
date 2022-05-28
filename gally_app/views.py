@@ -24,6 +24,7 @@ def category(request):
   
   if 'category' in request.GET and request.GET['category']:
     cat_to_search = request.GET.get('category')
+    cat_to_search = cat_to_search.lower()
     try:
       cat_Id = Category.objects.get(name=cat_to_search)
     except Category.DoesNotExist:
