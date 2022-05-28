@@ -21,3 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('gally_app.urls'))
 ]
+
+handler404 = 'gally_app.views.notFound'

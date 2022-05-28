@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import Http404, HttpResponse
 from django.shortcuts import render,redirect
 from .models import Category, Image,Location
 # Create your views here.
@@ -13,7 +13,7 @@ def location(request,place):
   try:
     placeId = Location.objects.get(name=place)
   except Location.DoesNotExist:
-    return HttpResponse("<h2>Location Not Found</h2>")
+    raise Http404
   photos = Image.filter_by_location(placeId)
   heading = placeId
   locations = Location.objects.all()
@@ -36,6 +36,6 @@ def category(request):
 
 
 
-def notFound(request):
+def notFound(request,exception):
 
   return render(request,"gally_app/404.html")
