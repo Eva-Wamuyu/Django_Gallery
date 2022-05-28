@@ -1,1 +1,1 @@
-web: gunicorn Django_gallery.wsgi
+web: gunicorn Django_gallery.wsgi --log-file - --log-level debug
