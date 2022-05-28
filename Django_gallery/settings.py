@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+
 
 ALLOWED_HOSTS = []
 
@@ -81,6 +81,7 @@ WSGI_APPLICATION = 'Django_gallery.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 if config('MODE') == 'development':
+    DEBUG = True
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
@@ -90,6 +91,7 @@ if config('MODE') == 'development':
         }
     }
 else:
+    DEBUG = False
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
