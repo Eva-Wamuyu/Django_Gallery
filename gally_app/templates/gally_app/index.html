@@ -11,17 +11,13 @@
   <div class="row justify-content-around">
   {% for photo in photos %}
   <div class="col-sm-12 img-div col-md-4">
-  <img src="{{photo.img.url}}" height="356px"  class="img-fluid" width="100%"    alt="{{photo.name}}">
+  <img src="{{photo.img.url}}" height="356px"  class="img-fluid" width="100%"    alt="{{photo.name}}"data-toggle="modal" data-target="#id{{photo.id}}">
   <br>
-  <!-- Button trigger modal -->
- <div class="d-flex btns my-2 mb-0 justify-content-between">
   <p class="desc">
     {{photo.img_name}}
  </p>
-  <button type="button" class="btn btn-color" data-toggle="modal" data-target="#id{{photo.id}}">
-    Details
-  </button>
- </div>
+ 
+
 
 <!-- Modal -->
 <div class="modal fade" id="id{{photo.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
